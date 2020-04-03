@@ -2,16 +2,9 @@ import React, { useState, useEffect} from 'react';
 import {bindActionCreators} from 'redux';
 import { Creators as ModulosCreators } from './store/posts.ducks';
 import {connect} from 'react-redux';
-import Table from '../../components/table/table.component'
 
 function PostsDetails(props){
     const [user, setUser] = useState([])
-
-	const columns = [
-		{ id: 'id', title: 'Título', property: 'title' },
-		{ id: 'id', title: 'Descricao', property: 'body'}
-    ];
-
     const { match: { params } } = props;
 
 	useEffect( () => {
@@ -67,7 +60,7 @@ function PostsDetails(props){
             </button>
 			</div>
         </div>
-</>
+        </>
 	)
 }
 

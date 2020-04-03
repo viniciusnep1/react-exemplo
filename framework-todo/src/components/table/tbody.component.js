@@ -7,8 +7,6 @@ import Subtitle from '../subtitle/subtitle.component';
 import {
 	ButtonDropdownStyle, ButtonStyle, IconStyle, TdStyle, TrStyle,
 } from './table.style';
-import DateHelper from '../../utils/dateHelper'
-import ReactTooltip from 'react-tooltip'
 
 // Função para caso não haja dados para serem mostrados
 const EmptyMessage = ({ emptyColSpan, emptyMessage }) => (
@@ -88,18 +86,6 @@ const MultiActionButton = ({ actions, item }) => (
 	</TdStyle>
 );
 
-const validDate = (newState, event, document) => {
-	var date = newState[event.target.name];
-	if(!DateHelper.isDataValida(date)){
-		document.style.boxShadow  = " rgb(255, 0, 0) 0px 0px 0px inset, rgb(255, 0, 0) 0px 0px 10px";
-		document.style.borderRadius = "5px";
-	}else{
-		document.style.boxShadow  = "none";
-		document.style.borderRadius = "none";
-	}
-}
-
-
 const Tbody = ({
 	acoesSingleButton,
 	actions,
@@ -135,17 +121,14 @@ const Tbody = ({
 									<div style={{marginLeft: 10}}>
 										{
 											content === true && 
-											<span data-tip data-for="happyFace">
+											<span >
 												<i  className="fas fa-check-circle" style={{color: "green", fontSize: 20}} ></i> Completada
-												<ReactTooltip id="happyFace" type="error">
-													<span>Show happy face</span>
-												</ReactTooltip>
 											</span>
 										}
 										{
 											content === null && 
 											<span>
-												<i class="fas fa-times-circle" style={{color: "red", fontSize: 20}} data-tip="hello world"></i> Não Completada 
+												<i class="fas fa-times-circle" style={{color: "red", fontSize: 20}}></i> Não Completada 
 											</span>
 										}
 									</div>

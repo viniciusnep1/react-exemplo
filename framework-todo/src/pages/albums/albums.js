@@ -10,14 +10,16 @@ function Albums(props){
 	];
 
 	const [array, setArray] = useState([])
+	
+	useEffect( () => {
+		setArray(props.albums);
+	}, [props]);
+
 
 	useEffect( () => {
 		props.getAlbums()
 	}, []);
 
-	useEffect( () => {
-		setArray(props.albums);
-	}, [props]);
 	
 	return (
 		<div className="container card">
