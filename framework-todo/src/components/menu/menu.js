@@ -36,7 +36,6 @@ const Menu = (props) => {
               <NavLink onClick={routePosts}>Posts</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
         </Collapse>
       </Navbar>
     </div>
