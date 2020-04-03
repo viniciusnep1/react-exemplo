@@ -64,6 +64,7 @@ export default class Table extends Component {
 				data,
 				actions,
 				onClick,
+				onClickRow,
 				onChangePage,
 				totalPages,
 				currentPage,
@@ -81,11 +82,12 @@ export default class Table extends Component {
 				orderFunction,
 				handleButtonTable,
 				ordenation,
-				handleChangeDate
+				handleChangeDate,
+				
 			},
 		} = this;
-
 		return (
+			
 			<div className='container-fluid'>
 				<div>
 					<TableStyle align={align} className={className} >
@@ -112,6 +114,7 @@ export default class Table extends Component {
 							handleChangeDateTable={handleChangeDateTable}
 							handleButtonTable={handleButtonTable}
 							handleChangeDate={handleChangeDate}
+							onClickRow={onClickRow}
 						/>
 
 					</TableStyle>

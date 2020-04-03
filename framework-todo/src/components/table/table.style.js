@@ -45,6 +45,7 @@ export const TdStyle = styled.td`
 	padding-left: 5px;
 	border-right: 1px solid #ece4e4;
 	font-size: 14px !important;
+	
 `;
 
 export const IconStyle = styled.i`

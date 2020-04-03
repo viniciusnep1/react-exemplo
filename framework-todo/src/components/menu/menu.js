@@ -19,6 +19,10 @@ const Menu = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const routePosts = () => props.history.replace({ pathname: "/posts" })
+  const routeAlbums = () => props.history.replace({ pathname: "/albuns" })
+  const todos = () => props.history.replace({ pathname: "/" })
+  
   return (
     <div>
       <Navbar color="dark" dark expand="md">
@@ -27,28 +31,14 @@ const Menu = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink onClick={todos}>Tarefas</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink onClick={routeAlbums}>Albuns</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            <NavItem>
+              <NavLink onClick={routePosts}>Posts</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText>Simple Text</NavbarText>
         </Collapse>

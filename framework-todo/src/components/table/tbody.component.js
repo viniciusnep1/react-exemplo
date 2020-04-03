@@ -8,6 +8,7 @@ import {
 	ButtonDropdownStyle, ButtonStyle, IconStyle, TdStyle, TrStyle,
 } from './table.style';
 import DateHelper from '../../utils/dateHelper'
+import ReactTooltip from 'react-tooltip'
 
 // Função para caso não haja dados para serem mostrados
 const EmptyMessage = ({ emptyColSpan, emptyMessage }) => (
@@ -108,6 +109,7 @@ const Tbody = ({
 	emptyMessage,
 	exibirTotal,
 	onClick,
+	onClickRow,
 	showTotal,
 	trClass,
 	handleChangeInputTable,
@@ -124,21 +126,27 @@ const Tbody = ({
 			return ( <TrStyle className={trClass } onClick={onClick} key={item.id}>
 				{columns.map((columnItem) => {
 					const content = ObjectHelper.getValueByPropertyName(columnItem.property,item);
-					console.log('content: ', content);
 					const alignField = columnItem.number ? 'text-left' : '';
 					return (
-						<TdStyle className={alignField} key={columnItem.id} title={content !== null ? content.toString() : ""}>
+						<TdStyle className={alignField} style={onClickRow ? {cursor: "pointer"} : {}} onClick={ onClickRow ? () => onClickRow(item.id) : void(0)} title={content !== null ? content.toString() : ""}>
 							{
 								columnItem.icon
 								?
 									<div style={{marginLeft: 10}}>
 										{
 											content === true && 
-											<i className="fas fa-check-circle" style={{color: "green", fontSize: 20}}></i>
+											<span data-tip data-for="happyFace">
+												<i  className="fas fa-check-circle" style={{color: "green", fontSize: 20}} ></i> Completada
+												<ReactTooltip id="happyFace" type="error">
+													<span>Show happy face</span>
+												</ReactTooltip>
+											</span>
 										}
 										{
 											content === null && 
-											<i class="fas fa-times-circle" style={{color: "red", fontSize: 20}}></i>
+											<span>
+												<i class="fas fa-times-circle" style={{color: "red", fontSize: 20}} data-tip="hello world"></i> Não Completada 
+											</span>
 										}
 									</div>
 								:
