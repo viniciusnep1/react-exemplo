@@ -1,0 +1,114 @@
+// Color system
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #0a7fc2 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #05a182 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+
+$primary-color: #becdbf;
+$primary-color-hover: #46637f;
+
+$secondary-color: #e1e1e1;
+$secondary-color-hover: #aaaaaa;
+
+$btn-color: #517394;
+$btn-color-hover: #34495e;
+
+$btn-cancel: #e05260;
+$btn-cancel-hover: #d92638;
+
+$text-dark: #545454;
+$text-light: $white;
+$link-color: $blue;
+
+// font
+
+$font-family-sans-serif: Source Sans Pro;
+$font-family-titles: Montserrat;
+
+// Settings for body
+
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+$spacer: 1rem !default;
+
+:export {
+	// Color
+
+	whiteColor: $white;
+	gray100: $gray-100;
+	gray200: $gray-200;
+	gray300: $gray-300;
+	gray400: $gray-400;
+	gray500: $gray-500;
+	gray600: $gray-600;
+	gray700: $gray-700;
+	gray800: $gray-800;
+	gray900: $gray-900;
+	black: $black;
+
+	blue: $blue;
+	indigo: $indigo;
+	purple: $purple;
+	pink: $pink;
+	red: $red;
+	orange: $orange;
+	yellow: $yellow;
+	green: $green;
+	teal: $teal;
+	cyan: $cyan;
+
+	primaryColor: $primary-color;
+	primaryColorHover: $primary-color-hover;
+
+	secondaryColor: $secondary-color;
+	secondaryColorHover: $secondary-color-hover;
+
+	textDark: $text-dark;
+	textLight: $white;
+	linkColor: $blue;
+
+	// font
+
+	fontFamilySansSerif: $font-family-sans-serif;
+	fontFamilyTitles: $font-family-titles;
+
+	// Settings for body
+
+	bodyBg: $white;
+	bodyColor: $gray-900;
+	btnColor: $btn-color;
+	btnColorHover: $btn-color-hover;
+	btnCancel: $btn-cancel;
+	btnCancelHover: $btn-cancel-hover;
+
+	spacer: $spacer;
+}
